@@ -2,6 +2,10 @@ baseURL: "https://khourycm.github.io/portfolio/"
 languageCode: "en-us"
 title: "Christopher Khoury"
 
+author:
+  name: "Christopher Khoury"
+  email: "khoury.chris@gmail.com"
+
 module:
   imports:
     - path: github.com/imfing/hextra
@@ -27,7 +31,7 @@ params:
         url: "/portfolio/contact/"
   footer:
     enable: true
-    text: "© 2026 Christopher Khoury. All rights reserved."
+    text: "\u00a9 2026 Christopher Khoury. All rights reserved."
   theme:
     default: system
   search:
