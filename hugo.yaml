@@ -1,0 +1,52 @@
+baseURL: "https://khourycm.github.io/portfolio/"
+languageCode: "en-us"
+title: "Christopher Khoury"
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  highlight:
+    style: github
+
+params:
+  navbar:
+    logo:
+      text: "Christopher Khoury"
+    links:
+      - title: "Experience"
+        url: "/portfolio/experience/"
+      - title: "Expertise"
+        url: "/portfolio/expertise/"
+      - title: "Education"
+        url: "/portfolio/education/"
+      - title: "Publications"
+        url: "/portfolio/publications/"
+      - title: "Contact"
+        url: "/portfolio/contact/"
+  footer:
+    enable: true
+    text: "© 2026 Christopher Khoury. All rights reserved."
+  theme:
+    default: system
+  search:
+    enable: true
+
+menu:
+  main:
+    - name: "Experience"
+      url: "/portfolio/experience/"
+      weight: 1
+    - name: "Expertise"
+      url: "/portfolio/expertise/"
+      weight: 2
+    - name: "Education"
+      url: "/portfolio/education/"
+      weight: 3
+    - name: "Publications"
+      url: "/portfolio/publications/"
+      weight: 4
+    - name: "Contact"
+      url: "/portfolio/contact/"
+      weight: 5
