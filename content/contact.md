@@ -9,10 +9,10 @@ weight: 5
 Feel free to reach out through any of the channels below.
 
 {{< cards >}}
-  {{< card title="Email" icon="envelope" subtitle="khoury.chris@gmail.com" link="mailto:khoury.chris@gmail.com" >}}
+  {{< card title="Email" icon="mail" subtitle="khoury.chris@gmail.com" link="mailto:khoury.chris@gmail.com" >}}
   {{< card title="Phone" icon="phone" subtitle="(202) 256-6854" link="tel:+12022566854" >}}
   {{< card title="LinkedIn" icon="user" subtitle="linkedin.com/in/christopherkhoury" link="https://linkedin.com/in/christopherkhoury" >}}
-  {{< card title="Location" icon="map-pin" subtitle="Washington, DC" >}}
+  {{< card title="Location" icon="globe" subtitle="Washington, DC" >}}
 {{< /cards >}}
 
 ---
