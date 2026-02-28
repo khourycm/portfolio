@@ -16,8 +16,8 @@ My background spans transformational leadership, intelligence and analytics, eth
 
 {{< cards >}}
   {{< card link="experience" title="Experience" icon="briefcase" subtitle="AMA, PwC, Gallup, Nanosphere and more." >}}
-  {{< card link="expertise" title="Expertise" icon="sparkles" subtitle="Strategy, healthcare AI, analytics, ethics, and innovation." >}}
-  {{< card link="education" title="Education and Boards" icon="academic-cap" subtitle="MBA, MS, BS and extensive advisory leadership." >}}
-  {{< card link="publications" title="Publications and Talks" icon="document-text" subtitle="Papers, patents, and invited talks across AI and health." >}}
-  {{< card link="contact" title="Contact" icon="envelope" subtitle="Email, phone, LinkedIn, and location." >}}
+  {{< card link="expertise" title="Expertise" icon="star" subtitle="Strategy, healthcare AI, analytics, ethics, and innovation." >}}
+  {{< card link="education" title="Education and Boards" icon="user-group" subtitle="MBA, MS, BS and extensive advisory leadership." >}}
+  {{< card link="publications" title="Publications and Talks" icon="book-open" subtitle="Papers, patents, and invited talks across AI and health." >}}
+  {{< card link="contact" title="Contact" icon="mail" subtitle="Email, phone, LinkedIn, and location." >}}
 {{< /cards >}}
