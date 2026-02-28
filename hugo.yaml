@@ -12,6 +12,9 @@ module:
 markup:
   highlight:
     style: github
+  goldmark:
+    renderer:
+      unsafe: true
 
 params:
   navbar:
