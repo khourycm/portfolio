@@ -4,7 +4,13 @@ description: "Senior Strategy & Transformation Executive"
 layout: hextra-home
 ---
 
-## About
+<div style="display:flex;align-items:center;gap:24px;margin-bottom:24px;">
+  <img src="/portfolio/images/headshot.jpg" alt="Christopher Khoury" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #e5e7eb;flex-shrink:0;" />
+  <div>
+    <h2 style="margin:0 0 4px 0;">About</h2>
+    <p style="margin:0;font-size:0.95rem;color:#6b7280;">Senior Strategy &amp; Insights Executive | Board Member | Advisor</p>
+  </div>
+</div>
 
 As a senior strategy executive, I navigate complex business, technology, and policy environments to identify new capabilities, strategic partnerships, and market opportunities at the intersection of **healthcare, AI, and innovation**.
 
