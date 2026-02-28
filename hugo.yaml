@@ -14,7 +14,7 @@ markup:
     style: github
   goldmark:
     renderer:
-      unsafe: true
+      unsafe: true 
 
 params:
   navbar:
