@@ -2,9 +2,8 @@ baseURL: "https://khourycm.github.io/portfolio/"
 languageCode: "en-us"
 title: "Christopher Khoury"
 
-author:
-  name: "Christopher Khoury"
-  email: "khoury.chris@gmail.com"
+disableKinds:
+  - RSS
 
 module:
   imports:
@@ -31,7 +30,7 @@ params:
         url: "/portfolio/contact/"
   footer:
     enable: true
-    text: "\u00a9 2026 Christopher Khoury. All rights reserved."
+    text: "Copyright 2026 Christopher Khoury. All rights reserved."
   theme:
     default: system
   search:
