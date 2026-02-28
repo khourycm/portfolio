@@ -19,15 +19,15 @@ params:
       text: "Christopher Khoury"
     links:
       - title: "Experience"
-        url: "/portfolio/experience/"
+        url: "/experience/"
       - title: "Expertise"
-        url: "/portfolio/expertise/"
+        url: "/expertise/"
       - title: "Education"
-        url: "/portfolio/education/"
+        url: "/education/"
       - title: "Publications"
-        url: "/portfolio/publications/"
+        url: "/publications/"
       - title: "Contact"
-        url: "/portfolio/contact/"
+        url: "/contact/"
   footer:
     enable: true
     text: "Copyright 2026 Christopher Khoury. All rights reserved."
@@ -39,17 +39,17 @@ params:
 menu:
   main:
     - name: "Experience"
-      url: "/portfolio/experience/"
+      url: "/experience/"
       weight: 1
     - name: "Expertise"
-      url: "/portfolio/expertise/"
+      url: "/expertise/"
       weight: 2
     - name: "Education"
-      url: "/portfolio/education/"
+      url: "/education/"
       weight: 3
     - name: "Publications"
-      url: "/portfolio/publications/"
+      url: "/publications/"
       weight: 4
     - name: "Contact"
-      url: "/portfolio/contact/"
+      url: "/contact/"
       weight: 5
