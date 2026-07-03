@@ -178,12 +178,12 @@
   .org-row {
     display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;
   }
-  .org-item {
-    font-family: var(--font-display); font-size: 0.95rem;
-    color: rgba(255,255,255,0.55); letter-spacing: 0.03em;
-    opacity: 0.7; transition: opacity 0.2s;
+  .org-item { display: none; }
+  .org-logo {
+    opacity: 0.6; transition: opacity 0.25s, transform 0.25s;
+    cursor: default;
   }
-  .org-item:hover { opacity: 1; color: var(--gold); }
+  .org-logo:hover { opacity: 1; transform: translateY(-1px); }
 
   /* ===== SECTION ===== */
   section { padding: var(--section-pad) 0; }
@@ -418,11 +418,11 @@
     <div class="org-ticker">
       <div class="org-ticker-label">Past &amp; Present</div>
       <div class="org-row">
-        <span class="org-item">American Medical Association</span>
-        <span class="org-item">PwC</span>
-        <span class="org-item">Gallup</span>
-        <span class="org-item">The Ohio State University</span>
-        <span class="org-item">Nanosphere</span>
+        <div class="org-logo" style="font-family:'Georgia',serif;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:rgba(255,255,255,0.65);">AMA</div>
+        <div class="org-logo" style="font-family:'Arial',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:0.12em;color:rgba(255,255,255,0.65);">PwC</div>
+        <div class="org-logo" style="font-family:'Georgia',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,0.65);">Gallup</div>
+        <div class="org-logo" style="font-family:'Times New Roman',serif;font-size:1rem;font-weight:600;letter-spacing:0.03em;color:rgba(255,255,255,0.65);">THE OHIO STATE UNIVERSITY</div>
+        <div class="org-logo" style="font-family:'Arial',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.05em;color:rgba(255,255,255,0.65);">NANOSPHERE</div>
       </div>
     </div>
   </div>
