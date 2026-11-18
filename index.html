@@ -209,7 +209,10 @@
 
   /* ===== SECTION ===== */
   section { padding: var(--section-pad) 0; }
-  section:nth-child(odd) { background: var(--white); }
+  /* Grounds are pinned to ids: nth-child parity silently re-tints the whole page
+     whenever a section is added or hidden. */
+  #experience, #publications, #education { background: var(--surface); }
+  #expertise, #videos, #contact { background: var(--white); }
   section:first-of-type { padding-top: calc(var(--section-pad) + 2rem); }
 
   .section-header { margin-bottom: 3rem; }
