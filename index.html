@@ -149,6 +149,24 @@
   }
   .hero-cta-group .btn-outline:hover { border-color: var(--gold); color: var(--gold); background: transparent; }
   .hero .small { color: rgba(255,255,255,0.5); }
+  .hero-featured {
+    display: inline-flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
+    margin-top: 2rem; padding: 0.75rem 1.1rem; max-width: 44rem;
+    border: 1px solid rgba(255,255,255,0.18);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .hero-featured:hover { border-color: var(--gold); background: rgba(200,164,92,0.07); }
+  .hero-featured-label {
+    font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--gold-light); white-space: nowrap;
+  }
+  .hero-featured-text {
+    color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.4;
+    border-bottom: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s ease;
+  }
+  .hero-featured:hover .hero-featured-text { border-color: var(--gold); }
+  .hero-featured-arrow { color: var(--gold); font-size: 0.95rem; }
   .btn {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.7rem 1.6rem;
@@ -458,6 +476,12 @@
       <a href="mailto:khoury.chris@gmail.com" class="btn btn-outline">Get in Touch</a>
     </div>
 
+    <a class="hero-featured" href="https://researchworld.com/brand-stories/how-insights-guide-the-american-medical-association-s-mission-to-improve-healthcare" target="_blank" rel="noopener">
+      <span class="hero-featured-label">Featured · Research World</span>
+      <span class="hero-featured-text">How insights guide the AMA's mission to improve healthcare</span>
+      <span class="hero-featured-arrow" aria-hidden="true">&#8594;</span>
+    </a>
+
     <div class="org-ticker">
       <div class="org-ticker-label">Past &amp; Present</div>
       <div class="org-row">
@@ -695,6 +719,16 @@
     </div>
 
     <div class="pub-group reveal">
+      <h3>Interview &amp; Press</h3>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://researchworld.com/brand-stories/how-insights-guide-the-american-medical-association-s-mission-to-improve-healthcare">How Insights Guide the American Medical Association's Mission to Improve Healthcare</a>
+        </div>
+        <div class="pub-authors">Research World — Brand Stories interview with Crispin Beale (November 2026)</div>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
       <h3>Podcast Appearances</h3>
       <div class="pub-item">
         <div class="pub-title">
@@ -722,7 +756,7 @@
     <div class="section-header reveal">
       <div class="eyebrow">04</div>
       <h2>Panels, Talks &amp; Interviews</h2>
-      <p>Recorded sessions on AI adoption, physician sentiment, and the future of health care data.</p>
+      <p>Recorded sessions on AI adoption, physician sentiment, health equity, and scaling digital health.</p>
     </div>
 
     <div class="video-grid">
@@ -804,18 +838,6 @@
         </div>
       </a>
 
-      <a class="video-card reveal" href="https://www.youtube.com/watch?v=N97hnmrCNZw" target="_blank" rel="noopener">
-        <div class="video-thumb">
-          <img src="https://i.ytimg.com/vi/N97hnmrCNZw/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" onerror="this.src='https://i.ytimg.com/vi/N97hnmrCNZw/hqdefault.jpg'">
-          <div class="video-play" aria-hidden="true"><svg viewBox="0 0 12 14" fill="#fff"><path d="M0 0l12 7-12 7z"/></svg></div>
-          <span class="video-duration">1:13</span>
-        </div>
-        <div class="video-body">
-          <div class="video-venue">Health Datapalooza · 2016</div>
-          <div class="video-title">The Future of Health Data</div>
-          <div class="video-desc">Short interview with Thomas Tsang and Christopher Khoury on where health data is heading.</div>
-        </div>
-      </a>
     </div>
   </div>
 </section>
