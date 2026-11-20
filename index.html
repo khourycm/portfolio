@@ -309,6 +309,30 @@
     color: var(--navy); font-weight: 500;
     border-left: 2px solid var(--gold); padding-left: 0.75rem;
   }
+  /* scope at a glance: numbers first, prose second */
+  .pub-more { margin-top: 1.25rem; }
+  .pub-more a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--gold); text-decoration: none;
+    border-bottom: 1px solid transparent; transition: border-color 0.2s;
+  }
+  .pub-more a:hover { border-color: var(--gold); }
+  .exp-metrics {
+    display: flex; flex-wrap: wrap; gap: 1.75rem;
+    margin-top: 1.1rem; padding-top: 0.9rem;
+    border-top: 1px solid var(--stone);
+  }
+  .metric { display: flex; flex-direction: column; gap: 0.1rem; }
+  .metric-num {
+    font-family: var(--font-display); font-size: 1.2rem;
+    line-height: 1; color: var(--navy);
+  }
+  .metric-label {
+    font-family: var(--font-mono); font-size: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--muted);
+  }
 
   @media (max-width: 640px) {
     .exp-card { grid-template-columns: 1fr; gap: 0.5rem; }
@@ -480,6 +504,23 @@
     padding: 0.5rem 1rem; background: var(--navy); color: var(--white); text-decoration: none;
   }
   .skip-link:focus { top: 1rem; }
+  /* ===== PRINT ===== */
+  @media print {
+    @page { margin: 1.4cm; }
+    nav, .hero-featured, .org-ticker, .video-grid, .btn, .scroll-hint { display: none !important; }
+    body { background: #fff; color: #000; }
+    section { padding: 0.6rem 0 !important; background: #fff !important; page-break-inside: avoid; }
+    .hero { min-height: 0 !important; padding: 0 0 1rem !important; background: #fff !important; }
+    .hero h1, .hero p, .hero .eyebrow, .hero .hero-sub { color: #000 !important; }
+    .hero img { filter: grayscale(1); max-height: 90px; width: auto; }
+    .exp-card, .board-item, .pub-item, .edu-item { break-inside: avoid; border-color: #ccc !important; }
+    .exp-metrics { border-top: 1px solid #ccc; }
+    .metric-num, .metric-label, .detail, .pub-authors { color: #333 !important; }
+    a { color: #000 !important; text-decoration: none; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #555; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .section-header { margin-bottom: 1rem; }
+  }
 </style>
 </head>
 <body>
@@ -493,9 +534,9 @@
     <div class="nav-links">
       <a href="#experience" class="desktop-label">Experience</a>
       <a href="#expertise" class="desktop-label">Expertise</a>
-      <a href="#publications" class="desktop-label">Publications</a>
       <a href="#videos" class="desktop-label">Videos</a>
       <a href="#boards" class="desktop-label">Boards</a>
+      <a href="#publications" class="desktop-label">Publications</a>
       <a href="#contact" class="desktop-label">Contact</a>
       <a href="https://scholar.google.com/citations?user=8FF8pKIAAAAJ&hl=en" class="icon-link" aria-label="Google Scholar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -536,6 +577,7 @@
     <div class="hero-cta-group">
       <a href="#experience" class="btn btn-primary">View Experience</a>
       <a href="mailto:khoury.chris@gmail.com" class="btn btn-outline">Get in Touch</a>
+      <a href="static/cv.pdf" class="btn btn-outline" download>Download CV <span aria-hidden="true">&darr;</span></a>
     </div>
 
     <a class="hero-featured" href="https://researchworld.com/brand-stories/how-insights-guide-the-american-medical-association-s-mission-to-improve-healthcare" target="_blank" rel="noopener">
@@ -599,9 +641,14 @@
         </div>
         <div class="exp-desc">
           <p>Built and led a high-performing strategy and intelligence group driving data-driven decision-making at the intersection of healthcare technology, policy, and business. Formulated strategic partnerships resulting in 10 new healthtech ventures and 20+ external partnerships.</p>
-          <div class="exp-impact">Insights and Strategy for $400M mission budget · Team of 18</div>
         </div>
-      </div>
+      
+        <div class="exp-metrics">
+          <div class="metric"><span class="metric-num">$400M</span><span class="metric-label">Mission budget</span></div>
+          <div class="metric"><span class="metric-num">18</span><span class="metric-label">Team</span></div>
+          <div class="metric"><span class="metric-num">10</span><span class="metric-label">New ventures</span></div>
+          <div class="metric"><span class="metric-num">20+</span><span class="metric-label">Partnerships</span></div>
+        </div></div>
       <div class="exp-card reveal">
         <div class="exp-meta">
           <div class="exp-org"><a href="https://www.pwc.com">PwC</a></div>
@@ -610,9 +657,11 @@
         </div>
         <div class="exp-desc">
           <p>Directed research and development of thought leadership publications widely read by health industry executives, media, and policymakers. Provided trusted counsel to global healthcare leaders on emerging industry and regulatory trends.</p>
-          <div class="exp-impact">Managed team of 24 analysts</div>
         </div>
-      </div>
+      
+        <div class="exp-metrics">
+          <div class="metric"><span class="metric-num">24</span><span class="metric-label">Analysts led</span></div>
+        </div></div>
       <div class="exp-card reveal">
         <div class="exp-meta">
           <div class="exp-org"><a href="https://www.gallup.com">Gallup</a></div>
@@ -622,7 +671,11 @@
         <div class="exp-desc">
           <p>Designed quality performance dashboards used by hundreds of leaders at the largest private U.S. healthcare system. Led a 36,000-employee engagement and change management initiative. Authored 11 perspective papers for health systems.</p>
         </div>
-      </div>
+      
+        <div class="exp-metrics">
+          <div class="metric"><span class="metric-num">36,000</span><span class="metric-label">Employees</span></div>
+          <div class="metric"><span class="metric-num">11</span><span class="metric-label">Perspective papers</span></div>
+        </div></div>
       <div class="exp-card reveal">
         <div class="exp-meta">
           <div class="exp-org"><a href="https://wexnermedical.osu.edu">The Ohio State University Medical Center</a></div>
@@ -644,7 +697,11 @@
         </div>
       </div>
     </div>
-  </div>
+  
+        <div class="exp-metrics">
+          <div class="metric"><span class="metric-num">2</span><span class="metric-label">Patents</span></div>
+          <div class="metric"><span class="metric-num">$57M</span><span class="metric-label">Series B</span></div>
+        </div></div>
 </section>
 
 <!-- ===== EXPERTISE ===== -->
@@ -700,142 +757,13 @@
   </div>
 </section>
 
-<!-- ===== PUBLICATIONS ===== -->
-<section id="publications">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">03</div>
-      <h2>Publications &amp; Talks</h2>
-      <p>Peer-reviewed research, invited talks, and patents across AI, healthcare, and innovation.</p>
-    </div>
 
-    <div class="pub-group reveal">
-      <h3>Selected Publications</h3>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://doi.org/10.1371/journal.pdig.0001026">Eliminating the AI digital divide by building local capacity</a>
-        </div>
-        <div class="pub-authors">Gulamali F, Kim JY, Pejavara K, Thomas C, Mathur V, et al. <em>PLOS Digital Health</em> 4(10): e0001026 (2025).</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://arxiv.org/abs/2505.00467">Red teaming large language models for healthcare</a>
-        </div>
-        <div class="pub-authors">Balazadeh, Vahid, et al. <em>arXiv preprint</em> arXiv:2505.00467 (2025).</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          TweetstormMD: What Twitter Can Teach Us About Physician Sentiment
-        </div>
-        <div class="pub-authors">Guerrero, C and Khoury, C. <em>International Conference on Physician Health</em> (2021).</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://journalofethics.ama-assn.org/article/making-policy-augmented-intelligence-health-care/2019-02">Making Policy on Augmented Intelligence in Health Care</a>
-        </div>
-        <div class="pub-authors">Crigger, E. and Khoury, C. <em>AMA Journal of Ethics</em> (2019).</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://www.healthaffairs.org/content/forefront/health-care-industry-requires-roadmap-accelerate-impact-digital-health-innovations">Health Care Industry Requires A Roadmap To Accelerate The Impact Of Digital Health Innovations</a>
-        </div>
-        <div class="pub-authors">Hodgkins, Khoury, et al. <em>Health Affairs</em> (2018).</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://journals.lww.com/jonajournal/abstract/2011/07000/nursing_leadership_from_bedside_to_boardroom__a.4.aspx">Nursing Leadership From Bedside to Boardroom: A Focus on the Chief Nursing Officer</a>
-        </div>
-        <div class="pub-authors">JONA: Journal of Nursing Administration 41(7), July 2011.</div>
-      </div>
-    </div>
-
-    <div class="pub-group reveal">
-      <h3>Select Invited Talks</h3>
-      <div class="pub-item">
-        <div class="pub-title">Quirk's Insights Conference — New York; Machine Learning for Healthcare — Baltimore, MD; International Conference on Physician Health — London, UK (2026)</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">Machine Learning for Healthcare — Rochester, MN; Ai4 — Las Vegas; Quirk's Insights Conference — NYC (2025)</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">Health Tech Forward — Barcelona; Machine Learning for Healthcare — Toronto (2024)</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">National Academy of Medicine — Generative AI &amp; LLMs in Health &amp; Medicine — Washington, DC (2023)</div>
-      </div>
-    </div>
-
-    <div class="pub-group reveal">
-      <h3>Interviews &amp; Podcasts</h3>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://researchworld.com/brand-stories/how-insights-guide-the-american-medical-association-s-mission-to-improve-healthcare">How Insights Guide the American Medical Association's Mission to Improve Healthcare</a>
-        </div>
-        <div class="pub-authors">Research World — Brand Stories interview with Crispin Beale (November 2026)</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://podcasts.fame.so/e/mn4l5wkn-earning-trust-as-a-strategic-insights-function-christopher-khoury">
-            Earning Trust as a Strategic Insights Function
-          </a>
-        </div>
-        <div class="pub-authors">AYTM — Market research podcast on building trust through insights leadership</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://amajournalofethics.libsyn.com/ethics-talk-challenges-and-opportunities-for-ai-in-medical-education">
-            Challenges and Opportunities for AI in Medical Education
-          </a>
-        </div>
-        <div class="pub-authors">AMA Journal of Ethics — Ethics Talk podcast on AI's role in medical training</div>
-      </div>
-    </div>
-
-    <div class="pub-group reveal">
-      <h3>Recognition</h3>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://insight250.com/">Insight250 2025 Honoree</a>
-        </div>
-        <div class="pub-authors">Named one of 250 global honorees across market research, analytics, and evidence-based marketing (October 2025)</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://www.renaissancephilanthropy.org/playbooks/policy-entrepreneurship">Policy Entrepreneur Fellow — Renaissance Philanthropy</a>
-        </div>
-        <div class="pub-authors">Fellowship program for policy entrepreneurs working to move ideas into implemented policy (2025)</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://www.cbinsights.com/research/report/smart-people-healthcare/">CB Insights — &ldquo;Smart People in Healthcare&rdquo;</a>
-        </div>
-        <div class="pub-authors">One of 15 health care executives and investors asked to forecast the technology and business model innovations that will most shape the sector (November 2018)</div>
-      </div>
-    </div>
-
-    <div class="pub-group reveal">
-      <h3>Patents</h3>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://patents.google.com/patent/US7888107B2">System using self-contained processing module for detecting nucleic acids</a>
-        </div>
-        <div class="pub-authors">U.S. Patent 7,888,107B2</div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-title">
-          <a href="https://patents.google.com/patent/US7396677B2">Method of preparing nucleic acids for detection</a>
-        </div>
-        <div class="pub-authors">U.S. Patent 7,396,677B2</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ===== VIDEOS ===== -->
 <section id="videos">
   <div class="container">
     <div class="section-header reveal">
-      <div class="eyebrow">04</div>
+      <div class="eyebrow">03</div>
       <h2>Panels, Talks &amp; Interviews</h2>
       <p>Recorded sessions on AI adoption, physician sentiment, health equity, and scaling digital health.</p>
     </div>
@@ -927,7 +855,7 @@
 <section id="education">
   <div class="container">
     <div class="section-header reveal">
-      <div class="eyebrow">05</div>
+      <div class="eyebrow">04</div>
       <h2>Education &amp; Board Service</h2>
       <p>Academic credentials and advisory leadership across health, technology, and the arts.</p>
     </div>
@@ -976,15 +904,141 @@
   </div>
 </section>
 
+<!-- ===== PUBLICATIONS ===== -->
+<section id="publications">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">05</div>
+      <h2>Publications &amp; Talks</h2>
+      <p>Peer-reviewed research, invited talks, and patents across AI, healthcare, and innovation.</p>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Selected Publications</h3>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://arxiv.org/abs/2505.00467">Red teaming large language models for healthcare</a>
+        </div>
+        <div class="pub-authors">Balazadeh, Vahid, et al. <em>arXiv preprint</em> arXiv:2505.00467 (2025).</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          TweetstormMD: What Twitter Can Teach Us About Physician Sentiment
+        </div>
+        <div class="pub-authors">Guerrero, C and Khoury, C. <em>International Conference on Physician Health</em> (2021).</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://journalofethics.ama-assn.org/article/making-policy-augmented-intelligence-health-care/2019-02">Making Policy on Augmented Intelligence in Health Care</a>
+        </div>
+        <div class="pub-authors">Crigger, E. and Khoury, C. <em>AMA Journal of Ethics</em> (2019).</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://journals.lww.com/jonajournal/abstract/2011/07000/nursing_leadership_from_bedside_to_boardroom__a.4.aspx">Nursing Leadership From Bedside to Boardroom: A Focus on the Chief Nursing Officer</a>
+        </div>
+        <div class="pub-authors">JONA: Journal of Nursing Administration 41(7), July 2011.</div>
+      </div>
+    </div>
+
+    <div class="pub-more">
+      <a href="https://scholar.google.com/citations?user=8FF8pKIAAAAJ&hl=en" target="_blank" rel="noopener">Full list on Google Scholar &rarr;</a>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Select Invited Talks</h3>
+      <div class="pub-item">
+        <div class="pub-title">Quirk's Insights Conference — New York; Machine Learning for Healthcare — Baltimore, MD; International Conference on Physician Health — London, UK (2026)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Machine Learning for Healthcare — Rochester, MN; Ai4 — Las Vegas; Quirk's Insights Conference — NYC (2025)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Health Tech Forward — Barcelona; Machine Learning for Healthcare — Toronto (2024)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">National Academy of Medicine — Generative AI &amp; LLMs in Health &amp; Medicine — Washington, DC (2023)</div>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Interviews &amp; Podcasts</h3>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://researchworld.com/brand-stories/how-insights-guide-the-american-medical-association-s-mission-to-improve-healthcare">How Insights Guide the AMA&rsquo;s Mission to Improve Healthcare</a>
+        </div>
+        <div class="pub-authors">Research World &mdash; Brand Stories interview with Crispin Beale (November 2026)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://podcasts.fame.so/e/mn4l5wkn-earning-trust-as-a-strategic-insights-function-christopher-khoury">
+            Earning Trust as a Strategic Insights Function
+          </a>
+        </div>
+        <div class="pub-authors">AYTM — Market research podcast on building trust through insights leadership</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://amajournalofethics.libsyn.com/ethics-talk-challenges-and-opportunities-for-ai-in-medical-education">
+            Challenges and Opportunities for AI in Medical Education
+          </a>
+        </div>
+        <div class="pub-authors">AMA Journal of Ethics — Ethics Talk podcast on AI's role in medical training</div>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Recognition</h3>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://insight250.com/">Insight250 2025 Honoree</a>
+        </div>
+        <div class="pub-authors">Named one of 250 global honorees across market research, analytics, and evidence-based marketing (October 2025)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://www.renaissancephilanthropy.org/playbooks/policy-entrepreneurship">Policy Entrepreneur Fellow — Renaissance Philanthropy</a>
+        </div>
+        <div class="pub-authors">Fellowship program for policy entrepreneurs working to move ideas into implemented policy (2025)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://www.cbinsights.com/research/report/smart-people-healthcare/">CB Insights — &ldquo;Smart People in Healthcare&rdquo;</a>
+        </div>
+        <div class="pub-authors">One of 15 health care executives and investors asked to forecast the technology and business model innovations that will most shape the sector (November 2018)</div>      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Patents</h3>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://patents.google.com/patent/US7888107B2">System using self-contained processing module for detecting nucleic acids</a>
+        </div>
+        <div class="pub-authors">U.S. Patent 7,888,107B2</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">
+          <a href="https://patents.google.com/patent/US7396677B2">Method of preparing nucleic acids for detection</a>
+        </div>
+        <div class="pub-authors">U.S. Patent 7,396,677B2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="container">
     <div class="section-header reveal">
       <div class="eyebrow">06</div>
       <h2>Contact</h2>
-      <p>Open to discussing new opportunities, strategic partnerships, speaking engagements, and advisory roles.</p>
+      <p>Open to senior strategy and insights leadership roles, board appointments, and advisory work.</p>
     </div>
     <div class="contact-links reveal">
+      <a href="static/cv.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV (PDF)
+      </a>
       <a href="mailto:khoury.chris@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18" style="flex-shrink:0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         khoury.chris@gmail.com
