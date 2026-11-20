@@ -411,6 +411,11 @@
   /* ===== EDUCATION & BOARDS ===== */
   .edu-row { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem; }
   .edu-item { flex: 1; min-width: 220px; }
+  .edu-logo {
+    display: block; width: auto; height: auto;
+    max-height: 28px; max-width: 100%;
+    margin: 0 0 0.9rem;
+  }
   .edu-item h3 { font-family: var(--font-display); font-size: 1rem; color: var(--navy); }
   .edu-item .school { font-size: 0.9rem; color: var(--ink); margin: 0.25rem 0; }
   .edu-item .detail { font-size: 0.8rem; color: var(--muted); }
@@ -934,16 +939,19 @@
 
     <div class="edu-row reveal">
       <div class="edu-item">
+        <img class="edu-logo" src="static/images/edu-ohio-state.png" alt="" width="389" height="56" loading="lazy" decoding="async">
         <h3>MBA</h3>
         <div class="school">The Ohio State University — Fisher College of Business</div>
         <div class="detail">Weidler Scholar, <em>magna cum laude</em></div>
       </div>
       <div class="edu-item">
+        <img class="edu-logo" src="static/images/edu-wisconsin.png" alt="" width="573" height="56" loading="lazy" decoding="async">
         <h3>MS, Biomedical Engineering</h3>
         <div class="school">University of Wisconsin at Madison</div>
         <div class="detail">Pharmaceutical Sciences Minor</div>
       </div>
       <div class="edu-item">
+        <img class="edu-logo" src="static/images/edu-illinois.png" alt="" width="326" height="56" loading="lazy" decoding="async">
         <h3>BS, Electrical &amp; Computer Engineering</h3>
         <div class="school">University of Illinois at Urbana-Champaign</div>
       </div>
